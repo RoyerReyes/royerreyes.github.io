@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Dayer Store</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__logo1">
+                <h2 class="nav__title_1">Dayer Store</h2>                                
+            </div>         
+            <ul class="nav__menu_1">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>    
+                <li><a href="acerca.html">Acerca</a></li>            
+                <img src="./images/CarComp.svg" class="nav__close">
+            </ul>
+            <div class="nav__cart">
+                <button class="nav__cart-button">
+                    <img src="./images/CarComp.svg" alt="Carrito de Compras">
+                    <span class="nav__cart-count">0</span>
+                </button>
+                <div class="cart">
+                    <h2>Compras</h2>
+                    <ul class="cart__items">
+                        <!-- Los items del carrito se agregarán aquí -->
+                    </ul>
+                    <div class="cart__total">
+                        <strong>Total:</strong> $<span id="cart-total">0.00</span>
+                    </div>
+                    <button class="cart__checkout">Pagar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products_container">
+                <div class="product">
+                <h3>Producto 1</h3>
+                <p>Descripción del producto 1</p>
+                <span>$10.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 2</h3>
+                <p>Descripción del producto 2</p>
+                <span>$20.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 3</h3>
+                <p>Descripción del producto 3</p>
+                <span>$30.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 4</h3>
+                <p>Descripción del producto 4</p>
+                <span>$40.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 5</h3>
+                <p>Descripción del producto 5</p>
+                <span>$50.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 6</h3>
+                <p>Descripción del producto 6</p>
+                <span>$60.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 7</h3>
+                <p>Descripción del producto 7</p>
+                <span>$70.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 8</h3>
+                <p>Descripción del producto 8</p>
+                <span>$80.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 9</h3>
+                <p>Descripción del producto 9</p>
+                <span>$90.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 10</h3>
+                <p>Descripción del producto 10</p>
+                <span>$100.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 11</h3>
+                <p>Descripción del producto 11</p>
+                <span>$110.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Producto 12</h3>
+                <p>Descripción del producto 12</p>
+                <span>$120.00</span>
+                <button class="product__add-to-cart">Agregar al Carrito</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__container container">
+            <form class="footer__form" action="https://formspree.io/f/mknkkrkj" method="POST">
+                <h2 class="footer__newsletter">Registrate</h2>
+                <div class="footer__inputs">
+                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto">
+                    <input type="submit" value="Registrate" class="footer__submit">
+                </div>
+            </form>
+        </section>
+
+        <section class="footer__copy container">
+            <div class="footer__social">
+                <a href="#" class="footer__icons"><img src="./images/facebook.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="./images/Instagram.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="./images/WhatsApp.svg" class="footer__img"></a>
+            </div>
+
+            <h3 class="footer__copyright">Derechos reservados &copy; Rogger Reyes</h3>
+        </section>
+    </footer>
+    <script src="./js/menu.js"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+</html>
