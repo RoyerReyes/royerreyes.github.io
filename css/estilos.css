@@ -7,6 +7,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {    
@@ -47,14 +52,15 @@ body {
 .nav {    
     position: fixed;
     width: 100%;
-    background: #000;
     display: flex;
-    align-items: center;  
-    justify-content: space-between; 
-    padding: 25px;
-    transition: all 0.5s ease;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+    z-index: 1000;
+    top: 0;
 }
+
 .nav.active{
     background: #383838;
     padding: 15px;
@@ -74,6 +80,7 @@ body {
   }
 .nav__menu_1{
   display: flex;
+  list-style: none;
   grid-auto-columns: max-content;
   grid-auto-flow: column;
   display: grid;
@@ -81,7 +88,7 @@ body {
 
 .nav__menu_1 li{
     list-style: none;
-   margin: 10px;
+   margin: 0 10px;
 }
 
 .nav__menu_1 li a{
@@ -168,13 +175,6 @@ background-color: #000000;
 .about__title{
     color: #ffffff;
 }
-
-.subtitle {
-    color: #ffffff;
-    font-size: 2rem;
-    margin-bottom: 25px;
-}
-
 
 .about__paragraph {
     line-height: 1.5;
@@ -372,14 +372,15 @@ background-color: #000000;
     font-size: 4em;;
 }
 .questions__container{    
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 2em;
     padding-top: 50px;
     padding-bottom: 100px;
 }
 
 .questions__padding{
-    padding: 0;
+    padding: 10px 0;
     transition: padding .3s;
     border: 1px solid #5454D4;
     border-radius: 6px;
@@ -440,7 +441,8 @@ background-color: #000000;
 /* Footer */
 
 .footer{
-    background-color: #1D293F;
+    background-color: #0c065e;
+    padding: 0px ;
 }
 
 .footer__title{
@@ -458,8 +460,14 @@ background-color: #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     border-bottom: 1px solid #fff;
     padding-bottom: 60px;
+}
+
+.footer__form {
+    flex: 1;
+    min-width: 300px;
 }
 
 .nav--footer{
@@ -509,8 +517,9 @@ background-color: #000000;
 }
 
 .footer__copy{
-    --padding-container: 30px 0;
     text-align: center;
+    padding: 10px 0;
+    --padding-container: 30px 0;
     color: #fff;
 }
 
@@ -518,12 +527,20 @@ background-color: #000000;
     font-weight: 300;
 }
 
+.footer__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .footer__icons{
+    margin: 0 10px;
     margin-bottom: 10px;
 }
 
 .footer__img{
-    width: 30px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Media queries */
@@ -718,4 +735,223 @@ background-color: #000000;
         width: 100%;
         */
     }
+}
+
+@media (max-width: 768px) {
+    .nav__menu_1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__menu_1 li {
+        margin: 10px 0;
+    }
+
+    .questions__container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav__logo1 {
+        margin-bottom: 10px;
+    }
+
+    .questions__padding {
+        padding: 5px 0;
+    }
+}
+
+/* Imágenes responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    flex: 1;
+}
+
+.products_container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos se alineen uno al lado del otro y se envuelvan */
+    justify-content: center; /* Centra los productos horizontalmente */
+    gap: 20px; /* Espacio entre los productos */
+    padding: 50px 0;
+    position: relative; /* Asegura que los productos estén posicionados correctamente */
+    z-index: 1; /* Asegura que los productos estén encima de la imagen de fondo */
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/dayerstore.png'); /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 99.1vw; /* Asegura que la sección ocupe todo el ancho de la ventana */
+    min-height: 100vh; /* Asegura que la sección ocupe al menos la altura de la ventana */
+    margin: 0; /* Elimina cualquier margen */
+    padding: 100px; /* Elimina cualquier padding */
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
+    margin-top: -50px; /* Ajusta este valor para eliminar la línea blanca */
+}
+
+.product {
+    margin-top: 55px; /* Ajusta este valor para eliminar la línea blanca */
+    border: 3px solid #ffffff;
+    padding: 20px;
+    width: calc(33.333% - 120px); /* Ajusta el ancho de los productos */
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente para los productos */
+}
+
+.product__add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Carrito de Compras */
+.nav__cart {
+    position: relative;
+}
+
+.nav__cart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav__cart-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav__cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.cart {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cart__items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.cart__items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart__total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cart__checkout {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mostrar el carrito al hacer clic en el botón */
+.nav__cart-button:focus + .cart,
+.nav__cart-button:hover + .cart {
+    display: block;
+}
+
+/* Sección de contacto */
+.contacto_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/dayerstore.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 99.1vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-top: 55px;
+}
+
+.subtitle {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacto__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contacto__form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto__form-group label {
+    margin-bottom: 5px;
+}
+
+.contacto__form-group input,
+.contacto__form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto__submit {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
 }
